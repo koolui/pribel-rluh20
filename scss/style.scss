@@ -1,0 +1,138 @@
+// Import necessary styling for demo only (You dont need this)
+@import 'demo/ads.scss';
+@import 'demo/demo.scss';
+
+// Import variable
+@import 'vars.scss';
+
+
+body {
+    font-size: $root-font-size;
+    background-color: $background-color;
+    color: $text-color;
+}
+
+// Begin pricing table styling
+.koolui-pribel-rluh20 {
+    font-family: $custom-google-font;
+    padding: $gap * 2 0;
+    
+    // Pricing table item
+    .item {
+        background-color: $base-color;
+        padding: $gap;
+        margin-bottom: $gap;
+        border-radius: $item-radius;
+        position:relative;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.05);
+        
+        // Medium devices (tablets, 992px and up)
+        @media screen and (min-width: 992px) {
+            margin-bottom: 0;
+        }
+
+        // Item media (icon or image)
+        &__media {
+            width: $item-media-size;
+            height: $item-media-size;
+            border-radius: $item-media-size / 2;
+            margin: 0 auto $gap;
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            img {
+                width: auto;
+                max-width: 100%;
+                max-height: 100%;
+                position: relative;
+                z-index: 3;
+            }
+        }
+
+        // Typography
+        &__heading {
+            margin-left: -$gap;
+            margin-right: -$gap;
+            position: relative;
+            &:before, &:after {
+                width: $heading-border-width;
+                height: $heading-border-height;
+                background-color: $border-color;
+                content: "";
+                top: 50%;
+                margin-top: -($heading-border-height / 2);
+                position: absolute;
+            }
+            &:before {
+                left: 0;
+            }
+            &:after {
+                right: 0;
+            }
+            h3 {
+                font-size: 1.15rem;
+                font-weight: 600;
+                line-height: 1.25rem;
+                margin: 0;
+                margin-bottom: $gap;
+                letter-spacing: $heading-letter-spacing;
+                margin-left: $heading-letter-spacing * 2;
+            }
+        }
+
+        // Item content
+        &__content {
+            ul {
+                margin: 0;
+                padding: 0;
+                margin-bottom: $gap;
+                list-style: none;
+                li {
+                    line-height: $list-item-height;
+                    color: $text-muted-color;
+                    margin: 0;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        // Pricing
+        &__pricing {
+            p {
+                margin-bottom: $gap / 1.5;
+                color: $accent-color;
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 2.375rem;
+                small {
+                    font-size: .875rem;
+                    color: $text-muted-color;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        // Button
+        .btn.btn-primary {
+            color: $base-color;
+            height: $button-height;
+            border-radius: $button-height / 2;
+            background-color: $primary-color;
+            border-color: $primary-color;
+            padding-left: $gap;
+            padding-right: $gap;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: .875rem;
+            &:hover {
+                background-color: darken($primary-color,10);
+                border-color: darken($primary-color,10);
+            }
+        }
+
+    }
+}
